@@ -1,0 +1,26 @@
+# Settings
+PRINT_SIM_PROGRESS = True
+
+
+# Time values
+DURATION_DAYS = 260
+HOURS_IN_DAY = 9
+DURATION_HOURS = HOURS_IN_DAY*DURATION_DAYS
+
+
+# Data generation process
+SEED = 37
+PATIENT_DISTRIBUTIONS = [(('exponential', (HOURS_IN_DAY/16.95,)),  # Arrival time patient type I
+                          # ('normal', (25.14/60, 5.84/60))),  # Scan duration type I best case
+                          ('normal', (25.71 / 60, 5.84 / 60))),  # Scan duration type I normal case
+                          # ('normal', (26.33 / 60, 5.84 / 60))),  # Scan duration type I worst case
+                         (('exponential', (HOURS_IN_DAY/9.95,)),  # Arrival time patient type II
+                          # ('lognormal', (39.127/60, 12.07/60)))]  # Scan duration type II best case
+                          ('lognormal', (40.71 / 60, 12.07 / 60)))]  # Scan duration type II normal case
+                          # ('lognormal', (42.369 / 60, 12.07 / 60)))]  # Scan duration type II worst case
+NUM_MACHINES = 2
+
+
+# REPRESENTATIONS
+SCHEDULE_PATIENTS = 10
+MAKE_SCAN = 20
